@@ -1,0 +1,64 @@
+/* Menu Admin - Estilos Complementares */
+
+:root {
+    --primary: #d32f2f;
+    --secondary: #1a1a1a;
+    --accent: #ff6f00;
+    --text: #333;
+    --light-text: #666;
+}
+
+/* Dropdown Header - Admin Badge */
+.dropdown-header p:last-child {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85em !important;
+    color: var(--accent) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dropdown-header p:last-child i {
+    font-size: 1em;
+}
+
+/* Separador do Menu */
+.dropdown-menu hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 8px 0;
+}
+
+/* Link Gerenciar Serviços - Destaque */
+.dropdown-menu a:has(i.fa-wrench) {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.dropdown-menu a:has(i.fa-wrench):hover {
+    background: rgba(211, 47, 47, 0.1);
+}
+
+/* Link Financeiro - Destaque */
+.dropdown-menu a:has(i.fa-coins) {
+    color: #0f7b4f;
+    font-weight: 600;
+}
+
+.dropdown-menu a:has(i.fa-coins):hover {
+    background: rgba(15, 123, 79, 0.1);
+    color: #0f7b4f;
+}
+
+.dropdown-menu a:has(i.fa-coins) i {
+    color: #c28a00;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .dropdown-header p:last-child {
+        font-size: 0.8em !important;
+    }
+}
