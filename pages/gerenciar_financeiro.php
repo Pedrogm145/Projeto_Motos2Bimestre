@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     session_start();
 
     if (!isset($_SESSION['id'])) {
@@ -18,7 +18,7 @@
     $stmtAdmin->close();
 
     if (!$usuarioAdmin || $usuarioAdmin['is_admin'] != 1) {
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
 
@@ -98,14 +98,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financeiro - Thunder Motors Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="menu_admin.css">
-    <link rel="stylesheet" href="financeiro.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/menu_admin.css">
+    <link rel="stylesheet" href="../assets/css/financeiro.css">
 </head>
 <body>
 
-    <?php include 'menu_admin.php'; ?>
+    <?php include __DIR__ . '/../includes/menu_admin.php'; ?>
 
     <div class="admin-container">
         <div class="admin-header">
@@ -117,7 +116,7 @@
         </div>
 
         <div class="admin-content">
-            <a href="index.php" class="btn-voltar">
+            <a href="../index.php" class="btn-voltar">
                 <i class="fas fa-arrow-left"></i>
                 Voltar ao Inicio
             </a>
@@ -226,7 +225,7 @@
                         <?= $acao == 'criar' ? 'Nova Movimentacao' : 'Editar Movimentacao' ?>
                     </h2>
 
-                    <form method="POST" action="processar_financeiro.php">
+                    <form method="POST" action="../actions/processar_financeiro.php">
                         <input type="hidden" name="acao" value="<?= $acao ?>">
                         <?php if ($acao == 'editar'): ?>
                             <input type="hidden" name="id" value="<?= $movimentacao['id'] ?>">
@@ -311,7 +310,7 @@
                         <p>Tem certeza que deseja deletar a movimentacao <strong><?= htmlspecialchars($movimentacao['descricao']) ?></strong>?</p>
                     </div>
 
-                    <form method="POST" action="processar_financeiro.php">
+                    <form method="POST" action="../actions/processar_financeiro.php">
                         <input type="hidden" name="acao" value="deletar">
                         <input type="hidden" name="id" value="<?= $movimentacao['id'] ?>">
 

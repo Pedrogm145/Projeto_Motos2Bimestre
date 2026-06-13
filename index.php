@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/config/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
@@ -29,8 +29,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thunder Motors - Customização de Motos Premium</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/index.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -51,7 +51,7 @@
                     </ul>
                 </nav>
                 <div class="profile-container">
-                    <img src="./icones/perfilll.png" alt="Perfil" id="profileBtn" width="40px" height="40px" class="profile-img">
+                    <img src="assets/img/icones/perfilll.png" alt="Perfil" id="profileBtn" width="40px" height="40px" class="profile-img">
                     <?php if ($usuarioLogado): ?>
                         <span class="usuario-nome"><?php echo htmlspecialchars($nomeUsuario); ?></span>
                     <?php endif; ?>
@@ -65,25 +65,25 @@
                                     </p>
                                 <?php endif; ?>
                             </div>
-                            <a href="editar_perfil.php" class="dropdown-item">
+                            <a href="pages/editar_perfil.php" class="dropdown-item">
                                 <i class="fas fa-user-circle"></i> Meu Perfil
                             </a>
                             <?php if ($isAdmin): ?>
-                                <a href="gerenciar_servicos.php" class="dropdown-item">
+                                <a href="pages/gerenciar_servicos.php" class="dropdown-item">
                                     <i class="fas fa-wrench"></i> Gerenciar Serviços
                                 </a>
-                                <a href="gerenciar_financeiro.php" class="dropdown-item">
+                                <a href="pages/gerenciar_financeiro.php" class="dropdown-item">
                                     <i class="fas fa-coins"></i> Financeiro
                                 </a>
                             <?php endif; ?>
-                            <a href="sair.php" class="dropdown-item">
+                            <a href="actions/sair.php" class="dropdown-item">
                                 <i class="fas fa-sign-out-alt"></i> Sair
                             </a>
                         <?php else: ?>
-                            <a href="cadastrar.php" class="dropdown-item">
+                            <a href="pages/cadastrar.php" class="dropdown-item">
                                 <i class="fas fa-user-plus"></i> Cadastro
                             </a>
-                            <a href="login.php" class="dropdown-item">
+                            <a href="pages/login.php" class="dropdown-item">
                                 <i class="fas fa-sign-in-alt"></i> Login
                             </a>
                         <?php endif; ?>
@@ -340,6 +340,10 @@
 
     <script>
         // Profile Dropdown Menu
+        setTimeout(() => {
+            
+        }, timeout);
+        
         const profileBtn = document.getElementById('profileBtn');
         const profileDropdown = document.getElementById('profileDropdown');
 
@@ -381,7 +385,7 @@
         const servicoCards = document.querySelectorAll('.servico-card');
         servicoCards.forEach(card => {
             card.addEventListener('click', function() {
-                window.location.href = 'servicos.php';
+                window.location.href = 'pages/servicos.php';
             });
         });
     </script>

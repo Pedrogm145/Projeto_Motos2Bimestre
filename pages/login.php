@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     
     $erro = '';
     $sucesso = '';
@@ -37,7 +37,7 @@
                     $_SESSION['email'] = $usuario['email'];
                     
                     $sucesso = 'Login realizado com sucesso! Redirecionando...';
-                    header("Refresh: 1; url=index.php");
+                    header("Refresh: 1; url=../index.php");
                 }
             }
             $stmt->close();
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Thunder Motors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -117,7 +117,7 @@
 
             <div class="login-footer">
                 <p>Não tem conta? <a href="cadastrar.php">Cadastre-se aqui</a></p>
-                <p><a href="index.php" class="btn-voltar-home"><i class="fas fa-home"></i> Voltar para Página Inicial</a></p>
+                <p><a href="../index.php" class="btn-voltar-home"><i class="fas fa-home"></i> Voltar para Página Inicial</a></p>
             </div>
         </div>
     </div>

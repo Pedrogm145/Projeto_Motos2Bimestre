@@ -10,6 +10,6 @@
     }
     
     // Redirecionar para a página inicial
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 ?>

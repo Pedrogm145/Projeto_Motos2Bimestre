@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
@@ -97,8 +97,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil - Thunder Motors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="editar_perfil.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/editar_perfil.css">
 </head>
 <body>
     <div class="perfil-container">
@@ -196,7 +196,7 @@
                     </div>
                 </form>
 
-                <a href="index.php" class="btn-voltar">
+                <a href="../index.php" class="btn-voltar">
                     <i class="fas fa-arrow-left"></i> Voltar para Home
                 </a>
             </div>
@@ -219,7 +219,7 @@
             if (confirmacao) {
                 const segundaConfirmacao = confirm('AVISO: Esta ação não pode ser desfeita. Deseja continuar?');
                 if (segundaConfirmacao) {
-                    window.location.href = 'deletar_perfil.php';
+                    window.location.href = '../actions/deletar_perfil.php';
                 }
             }
         }

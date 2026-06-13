@@ -263,27 +263,27 @@
         }
 
         .portfolio-harley {
-            background-image: url('imagens/portfolio/harley-davidson-vermelha.png');
+            background-image: url('../img/portfolio/harley-davidson-vermelha.png');
         }
 
         .portfolio-yamaha {
-            background-image: url('imagens/portfolio/yamaha-yzf-r3.png');
+            background-image: url('../img/portfolio/yamaha-yzf-r3.png');
         }
 
         .portfolio-street {
-            background-image: url('imagens/portfolio/custom-street-fighter.png');
+            background-image: url('../img/portfolio/custom-street-fighter.png');
         }
 
         .portfolio-classica {
-            background-image: url('imagens/portfolio/moto-classica-restaurada.png');
+            background-image: url('../img/portfolio/moto-classica-restaurada.png');
         }
 
         .portfolio-naked {
-            background-image: url('imagens/portfolio/naked-bike-personalizada.png');
+            background-image: url('../img/portfolio/naked-bike-personalizada.png');
         }
 
         .portfolio-chopper {
-            background-image: url('imagens/portfolio/chopper-art-deco.png');
+            background-image: url('../img/portfolio/chopper-art-deco.png');
         }
 
         .portfolio-item:hover {

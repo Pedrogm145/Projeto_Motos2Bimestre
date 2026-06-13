@@ -1,5 +1,5 @@
-  // Profile Dropdown Menu
- const profileBtn = document.getElementById('profileBtn');
+addEventListener('load', function(){
+const profileBtn = document.getElementById('profileBtn');
         const profileDropdown = document.getElementById('profileDropdown');
 
         // Toggle dropdown when clicking on profile image
@@ -40,6 +40,8 @@
         const servicoCards = document.querySelectorAll('.servico-card');
         servicoCards.forEach(card => {
             card.addEventListener('click', function() {
-                window.location.href = 'servicos.php';
+                window.location.href = 'pages/servicos.php';
             });
         });
+});
+

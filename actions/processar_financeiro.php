@@ -1,9 +1,9 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     session_start();
 
     if (!isset($_SESSION['id'])) {
-        header('Location: login.php');
+        header('Location: ../pages/login.php');
         exit();
     }
 
@@ -18,7 +18,7 @@
     $stmtAdmin->close();
 
     if (!$usuarioAdmin || $usuarioAdmin['is_admin'] != 1) {
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
 
@@ -38,7 +38,7 @@
     $conn->query($sqlCriarTabela);
 
     $acao = $_POST['acao'] ?? '';
-    $redirect_url = 'gerenciar_financeiro.php';
+    $redirect_url = '../pages/gerenciar_financeiro.php';
 
     function validarData($data) {
         $partes = explode('-', $data);

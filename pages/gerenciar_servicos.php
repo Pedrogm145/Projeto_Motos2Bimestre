@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
@@ -22,7 +22,7 @@
     
     // Se não for admin, redireciona
     if (!$usuarioAdmin || $usuarioAdmin['is_admin'] != 1) {
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
     
@@ -77,15 +77,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Serviços - Thunder Motors Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="menu_admin.css">
-    <link rel="stylesheet" href="gerenciar_servico.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/menu_admin.css">
+    <link rel="stylesheet" href="../assets/css/gerenciar_servico.css">
 </head>
 <body>
 
     <!-- Header do Menu -->
-    <?php include 'menu_admin.php'; ?>
+    <?php include __DIR__ . '/../includes/menu_admin.php'; ?>
     
     <div class="admin-container">
         <div class="admin-header">
@@ -97,7 +96,7 @@
         </div>
         
         <div class="admin-content">
-            <a href="index.php" class="btn-voltar">
+            <a href="../index.php" class="btn-voltar">
                 <i class="fas fa-arrow-left"></i>
                 Voltar ao Início
             </a>
@@ -183,7 +182,7 @@
                         <?= $acao == 'criar' ? 'Criar Novo Serviço' : 'Editar Serviço' ?>
                     </h2>
                     
-                    <form method="POST" action="processar_servicos.php">
+                    <form method="POST" action="../actions/processar_servicos.php">
                         <input type="hidden" name="acao" value="<?= $acao ?>">
                         <?php if ($acao == 'editar'): ?>
                             <input type="hidden" name="id" value="<?= $servico['id'] ?>">
@@ -266,7 +265,7 @@
                         <p>Tem certeza que deseja deletar permanentemente o serviço <strong><?= htmlspecialchars($servico['nome']) ?></strong>?</p>
                     </div>
                     
-                    <form method="POST" action="processar_servicos.php">
+                    <form method="POST" action="../actions/processar_servicos.php">
                         <input type="hidden" name="acao" value="deletar">
                         <input type="hidden" name="id" value="<?= $servico['id'] ?>">
                         

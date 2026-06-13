@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     session_start();
 
     if (!isset($_SESSION['id'])) {
@@ -39,9 +39,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - Thunder Motors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu_admin.css">
-    <link rel="stylesheet" href="servicos.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/menu_admin.css">
+    <link rel="stylesheet" href="../assets/css/servicos.css">
 </head>
 <body>
     <!-- Header -->
@@ -55,14 +55,14 @@
                 <div id="teste">
                     <nav id="nav-menu">
                         <ul>
-                            <li><a href="index.php#servicos">Serviços</a></li>
+                            <li><a href="../index.php#servicos">Serviços</a></li>
                             <li><a href="#portfolio">Portfólio</a></li>
                             <li><a href="#sobre">Sobre</a></li>
                             <li><a href="#contato">Contato</a></li>
                         </ul>
                     </nav>
                     <div class="profile-container">
-                        <img src="./icones/perfilll.png" alt="Perfil" id="profileBtn" width="40px" height="40px" class="profile-img">
+                        <img src="../assets/img/icones/perfilll.png" alt="Perfil" id="profileBtn" width="40px" height="40px" class="profile-img">
                         <?php if ($usuarioLogado): ?>
                             <span class="usuario-nome"><?php echo htmlspecialchars($nomeUsuario); ?></span>
                         <?php endif; ?>
@@ -87,7 +87,7 @@
                                         <i class="fas fa-coins"></i> Financeiro
                                     </a>
                                 <?php endif; ?>
-                                <a href="sair.php" class="dropdown-item">
+                                <a href="../actions/sair.php" class="dropdown-item">
                                     <i class="fas fa-sign-out-alt"></i> Sair
                                 </a>
                             <?php else: ?>
@@ -108,7 +108,7 @@
     <div class="servicos-container">
         <div class="servicos-content">
             <div class="acoes-header">
-                <a href="index.php" class="btn-voltar">
+                <a href="../index.php" class="btn-voltar">
                     <i class="fas fa-arrow-left"></i>
                     Voltar ao Início
                 </a>

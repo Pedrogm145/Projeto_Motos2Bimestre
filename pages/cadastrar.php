@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     
     $erro = '';
     $sucesso = '';
@@ -39,9 +39,10 @@
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("ssss", $nome, $email, $telefone, md5($senha));
                 
+                
                 if ($stmt->execute()) {
                     $sucesso = 'Cadastro realizado com sucesso! Redirecionando para login...';
-                    header("Refresh: 2; url=login.php");
+                    //header("Refresh: 2; url=login.php");
                 } else {
                     $erro = 'Erro ao registrar. Tente novamente.';
                 }
@@ -58,9 +59,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Thunder Motors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="cadastrar.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="cadastrar.js"></script>
+    <link rel="stylesheet" href="../assets/css/cadastrar.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/cadastrar.js"></script>
 </head>
 <body>
     <div class="cadastro-container">
@@ -149,7 +150,7 @@
 
             <div class="cadastro-footer">
                 <p>Já tem uma conta? <a href="login.php">Faça login aqui</a></p>
-                <p><a href="index.php" class="btn-voltar-home"><i class="fas fa-home"></i> Voltar para Página Inicial</a></p>
+                <p><a href="../index.php" class="btn-voltar-home"><i class="fas fa-home"></i> Voltar para Página Inicial</a></p>
             </div>
         </div>
     </div>

@@ -1,10 +1,10 @@
 <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../config/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
     if (!isset($_SESSION['id'])) {
-        header('Location: login.php');
+        header('Location: ../pages/login.php');
         exit();
     }
     
@@ -21,12 +21,12 @@
     
     // Se não for admin, redireciona
     if (!$usuarioAdmin || $usuarioAdmin['is_admin'] != 1) {
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
     
     $acao = $_POST['acao'] ?? '';
-    $redirect_url = 'gerenciar_servicos.php';
+    $redirect_url = '../pages/gerenciar_servicos.php';
     
     // CRIAR SERVIÇO
     if ($acao == 'criar') {

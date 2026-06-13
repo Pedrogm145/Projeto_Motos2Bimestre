@@ -14,14 +14,14 @@
             <div id="teste">
                 <nav id="nav-menu">
                     <ul>
-                        <li><a href="index.php">Início</a></li>
+                        <li><a href="../index.php">Início</a></li>
                         <li><a href="gerenciar_servicos.php">Gerenciar Serviços</a></li>
                         <li><a href="gerenciar_financeiro.php">Financeiro</a></li>
-                        <li><a href="perfil.php">Meu Perfil</a></li>
+                        <li><a href="editar_perfil.php">Meu Perfil</a></li>
                     </ul>
                 </nav>
                 <div class="profile-container">
-                    <img src="./icones/perfilll.png" alt="Perfil" id="profileBtn" width="40px" height="40px" class="profile-img">
+                    <img src="../assets/img/icones/perfilll.png" alt="Perfil" id="profileBtn" width="40px" height="40px" class="profile-img">
                     <?php if ($usuarioLogado): ?>
                         <span class="usuario-nome"><?php echo htmlspecialchars($nomeUsuario); ?></span>
                     <?php endif; ?>
@@ -43,7 +43,7 @@
                                 <i class="fas fa-coins"></i> Financeiro
                             </a>
                             <hr>
-                            <a href="sair.php" class="dropdown-item">
+                            <a href="../actions/sair.php" class="dropdown-item">
                                 <i class="fas fa-sign-out-alt"></i> Sair
                             </a>
                         <?php else: ?>
