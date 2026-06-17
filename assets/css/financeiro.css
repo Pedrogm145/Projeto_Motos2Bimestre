@@ -182,6 +182,11 @@
             color: white;
         }
 
+        .botao-criarMovimentacao{
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
         .btn-editar {
             background: var(--info);
             color: white;

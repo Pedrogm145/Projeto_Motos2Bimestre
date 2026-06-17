@@ -43,7 +43,7 @@
                                 <i class="fas fa-coins"></i> Financeiro
                             </a>
                             <hr>
-                            <a href="../actions/sair.php" class="dropdown-item">
+                            <a href="../backend/sair.php" class="dropdown-item">
                                 <i class="fas fa-sign-out-alt"></i> Sair
                             </a>
                         <?php else: ?>

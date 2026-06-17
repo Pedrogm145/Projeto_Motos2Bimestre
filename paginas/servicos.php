@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     session_start();
 
     if (!isset($_SESSION['id'])) {
@@ -87,7 +87,7 @@
                                         <i class="fas fa-coins"></i> Financeiro
                                     </a>
                                 <?php endif; ?>
-                                <a href="../actions/sair.php" class="dropdown-item">
+                                <a href="../backend/sair.php" class="dropdown-item">
                                     <i class="fas fa-sign-out-alt"></i> Sair
                                 </a>
                             <?php else: ?>

@@ -1,10 +1,10 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
     if (!isset($_SESSION['id'])) {
-        header('Location: ../pages/login.php');
+        header('Location: ../paginas/login.php');
         exit();
     }
     
@@ -26,7 +26,7 @@
     }
     
     $acao = $_POST['acao'] ?? '';
-    $redirect_url = '../pages/gerenciar_servicos.php';
+    $redirect_url = '../paginas/gerenciar_servicos.php';
     
     // CRIAR SERVIÇO
     if ($acao == 'criar') {

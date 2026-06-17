@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
@@ -84,7 +84,7 @@
 <body>
 
     <!-- Header do Menu -->
-    <?php include __DIR__ . '/../includes/menu_admin.php'; ?>
+    <?php include __DIR__ . '/../menu/menu_admin.php'; ?>
     
     <div class="admin-container">
         <div class="admin-header">
@@ -182,7 +182,7 @@
                         <?= $acao == 'criar' ? 'Criar Novo Serviço' : 'Editar Serviço' ?>
                     </h2>
                     
-                    <form method="POST" action="../actions/processar_servicos.php">
+                    <form method="POST" action="../backend/processar_servicos.php">
                         <input type="hidden" name="acao" value="<?= $acao ?>">
                         <?php if ($acao == 'editar'): ?>
                             <input type="hidden" name="id" value="<?= $servico['id'] ?>">
@@ -265,7 +265,7 @@
                         <p>Tem certeza que deseja deletar permanentemente o serviço <strong><?= htmlspecialchars($servico['nome']) ?></strong>?</p>
                     </div>
                     
-                    <form method="POST" action="../actions/processar_servicos.php">
+                    <form method="POST" action="../backend/processar_servicos.php">
                         <input type="hidden" name="acao" value="deletar">
                         <input type="hidden" name="id" value="<?= $servico['id'] ?>">
                         

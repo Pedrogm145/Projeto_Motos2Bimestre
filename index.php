@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/config/conexao.php';
+    require_once __DIR__ . '/conexao/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
@@ -65,34 +65,31 @@
                                     </p>
                                 <?php endif; ?>
                             </div>
-                            <a href="pages/editar_perfil.php" class="dropdown-item">
+                            <a href="paginas/editar_perfil.php" class="dropdown-item">
                                 <i class="fas fa-user-circle"></i> Meu Perfil
                             </a>
                             <?php if ($isAdmin): ?>
-                                <a href="pages/gerenciar_servicos.php" class="dropdown-item">
+                                <a href="paginas/gerenciar_servicos.php" class="dropdown-item">
                                     <i class="fas fa-wrench"></i> Gerenciar Serviços
                                 </a>
-                                <a href="pages/gerenciar_financeiro.php" class="dropdown-item">
+                                <a href="paginas/gerenciar_financeiro.php" class="dropdown-item">
                                     <i class="fas fa-coins"></i> Financeiro
                                 </a>
                             <?php endif; ?>
-                            <a href="actions/sair.php" class="dropdown-item">
+                            <a href="backend/sair.php" class="dropdown-item">
                                 <i class="fas fa-sign-out-alt"></i> Sair
                             </a>
                         <?php else: ?>
-                            <a href="pages/cadastrar.php" class="dropdown-item">
+                            <a href="paginas/cadastrar.php" class="dropdown-item">
                                 <i class="fas fa-user-plus"></i> Cadastro
                             </a>
-                            <a href="pages/login.php" class="dropdown-item">
+                            <a href="paginas/login.php" class="dropdown-item">
                                 <i class="fas fa-sign-in-alt"></i> Login
                             </a>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
-               <!-- <button class="menu-toggle" id="menu-toggle"> 
-                    <i class="fas fa-bars"></i>
-                </button> -->
             </div>
         </div>
     </header>
@@ -125,13 +122,11 @@
                 <div class="servico-card">
                     <i class="fas fa-paint-brush servico-icon"></i>
                     <h3>Pintura Customizada</h3>
-                    
                     <p>Designs únicos e personalizados com técnicas modernas de acabamento e proteção UV.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-tools servico-icon"></i>
                     <h3>Modificação Mecânica</h3>
-                    
                     <p>Upgrade de performance, sistemas de escape e otimização de motor com garantia.</p>
                 </div>
                 <div class="servico-card">
@@ -142,17 +137,14 @@
                 <div class="servico-card">
                     <i class="fas fa-wrench servico-icon"></i>
                     <h3>Restauração Completa</h3>
-                    
                     <p>Reforma completa de motos clássicas com atenção ao detalhe.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-lightbulb servico-icon"></i>
                     <h3>Iluminação LED</h3>
-                    
                     <p>Sistemas de LED modernos, faróis HID e iluminação ambiente personalizada.</p>
                 </div>
                 <div class="servico-card">
-                    
                     <i class="fas fa-tachometer-alt servico-icon"></i>
                     <h3>Consultoria Técnica</h3>
                     <p>Orientação profissional para manutenção e otimização da sua moto.</p>
@@ -337,57 +329,5 @@
             <p style="font-size: 0.9rem; margin-top: 0.5rem;">Desenvolvido com <i class="fas fa-heart" style="color: var(--primary);"></i> para amantes de motos</p>
         </div>
     </footer>
-
-    <script>
-        // Profile Dropdown Menu
-        setTimeout(() => {
-            
-        }, timeout);
-        
-        const profileBtn = document.getElementById('profileBtn');
-        const profileDropdown = document.getElementById('profileDropdown');
-
-        // Toggle dropdown when clicking on profile image
-        profileBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            profileDropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!profileBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
-                profileDropdown.classList.remove('active');
-            }
-        });
-
-        // Close dropdown when clicking on a menu item
-        const dropdownItems = document.querySelectorAll('.dropdown-item');
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', function() {
-                profileDropdown.classList.remove('active');
-            });
-        });
-
-        // Remover alerta de exclusão de conta após 4 segundos
-        const alertaDeletado = document.getElementById('alertaDeletado');
-        if (alertaDeletado) {
-            setTimeout(function() {
-                alertaDeletado.style.opacity = '0';
-                alertaDeletado.style.maxHeight = '0';
-                alertaDeletado.style.padding = '0';
-                setTimeout(function() {
-                    alertaDeletado.remove();
-                }, 500);
-            }, 4000);
-        }
-
-        // Redirecionar para gerenciar serviços ao clicar em um card
-        const servicoCards = document.querySelectorAll('.servico-card');
-        servicoCards.forEach(card => {
-            card.addEventListener('click', function() {
-                window.location.href = 'pages/servicos.php';
-            });
-        });
-    </script>
 </body>
 </html>

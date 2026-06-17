@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     
     $erro = '';
     $sucesso = '';
@@ -37,12 +37,13 @@
                 // Inserir novo usuário
                 $sql = "INSERT INTO users (nome, email, telefone, senha) VALUES (?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssss", $nome, $email, $telefone, md5($senha));
+                $senha_hash = md5($senha);
+                $stmt->bind_param("ssss", $nome, $email, $telefone, $senha_hash);
                 
                 
                 if ($stmt->execute()) {
                     $sucesso = 'Cadastro realizado com sucesso! Redirecionando para login...';
-                    //header("Refresh: 2; url=login.php");
+                    header("Refresh: 2; url=login.php");
                 } else {
                     $erro = 'Erro ao registrar. Tente novamente.';
                 }

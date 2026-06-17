@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     session_start();
 
     if (!isset($_SESSION['id'])) {
@@ -104,7 +104,7 @@
 </head>
 <body>
 
-    <?php include __DIR__ . '/../includes/menu_admin.php'; ?>
+    <?php include __DIR__ . '/../menu/menu_admin.php'; ?>
 
     <div class="admin-container">
         <div class="admin-header">
@@ -208,7 +208,7 @@
                     <?php else: ?>
                         <div class="sem-registros">
                             <i class="fas fa-receipt"></i>
-                            <p>Nenhuma movimentacao financeira cadastrada.</p>
+                            <p class="botao-criarMovimentacao">Nenhuma movimentacao financeira cadastrada.</p>
                             <a href="?acao=criar" class="btn-novo">
                                 <i class="fas fa-plus"></i>
                                 Criar Primeiro Registro
@@ -225,7 +225,7 @@
                         <?= $acao == 'criar' ? 'Nova Movimentacao' : 'Editar Movimentacao' ?>
                     </h2>
 
-                    <form method="POST" action="../actions/processar_financeiro.php">
+                    <form method="POST" action="../backend/processar_financeiro.php">
                         <input type="hidden" name="acao" value="<?= $acao ?>">
                         <?php if ($acao == 'editar'): ?>
                             <input type="hidden" name="id" value="<?= $movimentacao['id'] ?>">
@@ -310,7 +310,7 @@
                         <p>Tem certeza que deseja deletar a movimentacao <strong><?= htmlspecialchars($movimentacao['descricao']) ?></strong>?</p>
                     </div>
 
-                    <form method="POST" action="../actions/processar_financeiro.php">
+                    <form method="POST" action="../backend/processar_financeiro.php">
                         <input type="hidden" name="acao" value="deletar">
                         <input type="hidden" name="id" value="<?= $movimentacao['id'] ?>">
 

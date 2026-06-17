@@ -40,7 +40,7 @@ const profileBtn = document.getElementById('profileBtn');
         const servicoCards = document.querySelectorAll('.servico-card');
         servicoCards.forEach(card => {
             card.addEventListener('click', function() {
-                window.location.href = 'pages/servicos.php';
+                window.location.href = 'paginas/servicos.php';
             });
         });
 });

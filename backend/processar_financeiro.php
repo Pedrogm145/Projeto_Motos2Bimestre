@@ -1,9 +1,9 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     session_start();
 
     if (!isset($_SESSION['id'])) {
-        header('Location: ../pages/login.php');
+        header('Location: ../paginas/login.php');
         exit();
     }
 
@@ -38,7 +38,7 @@
     $conn->query($sqlCriarTabela);
 
     $acao = $_POST['acao'] ?? '';
-    $redirect_url = '../pages/gerenciar_financeiro.php';
+    $redirect_url = '../paginas/gerenciar_financeiro.php';
 
     function validarData($data) {
         $partes = explode('-', $data);

@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../config/conexao.php';
+    require_once __DIR__ . '/../conexao/conexao.php';
     session_start();
     
     // Verificar se usuário está logado
@@ -219,7 +219,7 @@
             if (confirmacao) {
                 const segundaConfirmacao = confirm('AVISO: Esta ação não pode ser desfeita. Deseja continuar?');
                 if (segundaConfirmacao) {
-                    window.location.href = '../actions/deletar_perfil.php';
+                    window.location.href = '../backend/deletar_perfil.php';
                 }
             }
         }
